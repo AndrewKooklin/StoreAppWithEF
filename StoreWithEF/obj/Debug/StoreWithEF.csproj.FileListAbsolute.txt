@@ -1,0 +1,15 @@
+C:\repos\StoreWithEF\StoreWithEF\bin\Debug\StoreWithEF.exe.config
+C:\repos\StoreWithEF\StoreWithEF\bin\Debug\StoreWithEF.exe
+C:\repos\StoreWithEF\StoreWithEF\bin\Debug\StoreWithEF.pdb
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csprojAssemblyReference.cache
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\MainWindow.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\App.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF_MarkupCompile.cache
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF_MarkupCompile.lref
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\MainWindow.baml
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.g.resources
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.Properties.Resources.resources
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.GenerateResource.cache
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.CoreCompileInputs.cache
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.exe
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.pdb
