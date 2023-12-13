@@ -82,6 +82,9 @@
     <Compile Include="Clients.cs">
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Commands\LogInCommand.cs" />
+    <Compile Include="HelpMethods\CheckInputText.cs" />
+    <Compile Include="HelpMethods\ValidateTextBoxRule.cs" />
     <Compile Include="ModelWithEF.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +96,8 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -191,8 +196,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
