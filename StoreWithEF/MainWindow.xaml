@@ -5,8 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StoreWithEF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="LogInForm" 
+        Height="300" 
+        Width="500"
+        Background="MediumPurple"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="LogInLabel" TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="LogInTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="37"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="LogInPasswordBox" TargetType="{x:Type PasswordBox}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="37"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="LogInButton" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="33"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="LightGreen"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0 0 0 5"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="LogIn form" 
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               FontSize="25"
+               FontWeight="Bold"
+               Margin="0,20,0,0"
+               Padding="3"
+               VerticalAlignment="Top" 
+               Width="178"/>
+        <Label Content="UserName"
+               Grid.Row="1"
+               Style="{StaticResource LogInLabel}" 
+               Width="120"/>
+        <Label Content="Password"
+               Grid.Row="2"
+               Style="{StaticResource LogInLabel}" 
+               Width="110"/>
+        <TextBox x:Name="tbUserName"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Style="{StaticResource LogInTextBox}"
+                 Width="230"/>
+        <PasswordBox x:Name="tbPassword"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Style="{StaticResource LogInPasswordBox}"
+                     Width="230"/>
+        <Label x:Name="tbErrorLogIn"
+               Content=""
+               Grid.Row="3"
+               Grid.Column="1"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Width="230"
+               Height="20"
+               FontSize="12"
+               Foreground="Red">
+        </Label>
+        <StackPanel
+            Grid.ColumnSpan="2"
+            Grid.Row="4"
+            Orientation="Horizontal">
+        <Button Content="Log in"
+                Style="{StaticResource LogInButton}"
+                Width="80"
+                Margin="160,0,0,12"/>
+        <Button Content="Registration" 
+                Margin="30,0,0,12" 
+                Width="128" 
+                Style="{StaticResource LogInButton}"/>
+        </StackPanel>
+
     </Grid>
 </Window>
