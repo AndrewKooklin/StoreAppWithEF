@@ -11,7 +11,6 @@ namespace StoreWithEF.HelpMethods
 {
     public class ValidateTextBoxRule : ValidationRule
     {
-        //public int Min { get; set; }
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
