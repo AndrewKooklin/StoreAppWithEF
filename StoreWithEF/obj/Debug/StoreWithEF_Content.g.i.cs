@@ -8,7 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/storewithefdb.ldf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/storewithefdb.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelwithef.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("modelwithef.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("storewithefdb.mdf")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("storewithefdb_log.ldf")]
 
 
