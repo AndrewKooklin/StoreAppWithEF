@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -13,11 +16,6 @@ namespace StoreWithEF.ViewModel
 
         public ICommand LogInCommand { get; set; }
 
-        
-        public void ValidateText_UserName(object sender, TextChangedEventArgs e)
-        {
-            
-        }
 
         private string userName;
         public string UserName
@@ -33,7 +31,12 @@ namespace StoreWithEF.ViewModel
             }
         }
 
+
+        
+
         public ICommand RegistrationRedirectCommand { get; set; }
+
+        
 
         public MainWindowViewModel()
         {

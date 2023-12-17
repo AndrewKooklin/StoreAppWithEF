@@ -70,6 +70,11 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="PasswordBox" TargetType="{x:Type PasswordBox}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="37"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
     </Window.Resources>
     
     <Grid>
@@ -121,9 +126,11 @@
                 </TextBox.Text>
             </TextBox>
             <PasswordBox x:Name="tbPassword"
-                     Style="{StaticResource LogInPasswordBox}"
-                     Margin="0,10,0,10"
-                     Width="230"/>
+                         Style="{StaticResource PasswordBox}"
+                         Margin="0,10,0,10"
+                         Width="230"
+                         Validation.ErrorTemplate="{StaticResource ValidationTemplate}"
+                         />
         </StackPanel>
         <Label x:Name="tbErrorLogIn"
                Content=""
@@ -143,11 +150,11 @@
         <Button Content="Log in"
                 Style="{StaticResource LogInButton}"
                 Width="80"
-                Margin="160,0,0,12"
+                Margin="165,0,0,12"
                 Command="{Binding LogInCommand, Source={StaticResource MainWindowViewModel}}" 
                 CommandParameter="{Binding ElementName=spTextInput, Mode=OneWay}"/>
         <Button Content="Registration" 
-                Margin="30,0,0,12" 
+                Margin="20,0,0,12" 
                 Width="128" 
                 Style="{StaticResource LogInButton}"/>
         </StackPanel>
