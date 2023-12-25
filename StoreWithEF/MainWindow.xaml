@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StoreWithEF"
         xmlns:viewModel="clr-namespace:StoreWithEF.ViewModel"
-        xmlns:help="clr-namespace:StoreWithEF.HelpMethods"
+        xmlns:help="clr-namespace:StoreWithEF.HelpMethods" 
+        xmlns:components="clr-namespace:StoreWithEF.Components"
+        xmlns:commands="clr-namespace:StoreWithEF.Commands"
         mc:Ignorable="d"
         Title="LogInForm" 
         Height="300"
         MinHeight="300"
+        MaxHeight="300"
         Width="500"
         MinWidth="500"
+        MaxWidth="500"
         Background="MediumPurple"
         WindowStartupLocation="CenterScreen">
 
@@ -20,6 +24,13 @@
         </viewModel:MainWindowViewModel>
         <help:ValidateTextBoxRule x:Key="ValidateTextBoxRule">
         </help:ValidateTextBoxRule>
+        <help:MyMultiValueConverter x:Key="MyMultiValueConverter">
+        </help:MyMultiValueConverter>
+        <commands:GetPasswordStringCommand x:Key="GetPasswordStringCommand">
+        </commands:GetPasswordStringCommand>
+        <components:BindablePasswordBox x:Key="BindablePasswordBox">
+            
+        </components:BindablePasswordBox>
         
 
         <Style x:Key="LogInLabel" TargetType="{x:Type Label}">
@@ -56,6 +67,16 @@
                 
             </DockPanel>
         </ControlTemplate>
+        <ControlTemplate x:Key="ValidationPasswordBoxTemplate">
+            <DockPanel>
+                <TextBlock Foreground="Red"
+                           DockPanel.Dock="Bottom">!
+                </TextBlock>
+                <AdornedElementPlaceholder x:Name="ErrorAdorner">
+                    
+                </AdornedElementPlaceholder>
+            </DockPanel>
+        </ControlTemplate>
 
         <Style x:Key="TextBoxInError" TargetType="{x:Type TextBox}">
             <Setter Property="FontSize" Value="20"/>
@@ -77,17 +98,17 @@
         </Style>
     </Window.Resources>
     
-    <Grid>
+    <Grid x:Name="gLogIn">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.8*"/>
             <RowDefinition Height="0.8*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.8*"/>
             <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Label Content="LogIn form" 
@@ -104,56 +125,77 @@
                Style="{StaticResource LogInLabel}" 
                Width="120"/>
         <Label Content="Password"
-               Grid.Row="2"
+               Grid.Row="3"
                Style="{StaticResource LogInLabel}" 
                Width="110"/>
-        <StackPanel x:Name="spTextInput"
-                     Grid.Row="1"
-                     Grid.Column="1"
-                     Grid.RowSpan="2">
-            <TextBox x:Name="tbUserName"
-                     Style="{StaticResource TextBoxInError}"
-                     Margin="0,15,0,10"
-                     Width="230"
-                     Validation.ErrorTemplate="{StaticResource ValidationTemplate}">
-                <TextBox.Text>
+        
+        <TextBox x:Name="tbUserName"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding UserName, Source={StaticResource MainWindowViewModel}}"
+                 Style="{StaticResource TextBoxInError}"
+                 Margin="0"
+                 Width="230">
+                <!--<TextBox.Text>
                     <Binding Path="UserName" Source="{StaticResource MainWindowViewModel}"
                  UpdateSourceTrigger="PropertyChanged" >
                         <Binding.ValidationRules>
                             <help:ValidateTextBoxRule/>
                         </Binding.ValidationRules>
                     </Binding>
-                </TextBox.Text>
+                </TextBox.Text>-->
             </TextBox>
             <PasswordBox x:Name="tbPassword"
-                         Style="{StaticResource PasswordBox}"
-                         Margin="0,10,0,10"
-                         Width="230"
-                         Validation.ErrorTemplate="{StaticResource ValidationTemplate}"
-                         />
-        </StackPanel>
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         Validation.ErrorTemplate="{StaticResource ValidationPasswordBoxTemplate}"
+                         FontSize="20"
+                         Height="37"
+                         HorizontalAlignment="Left"                   
+                         Margin="0"
+                         Width="230">
+                <!--<PasswordBox.InputBindings>
+                    <KeyBinding Key="Return" 
+                                Command="{Binding Mode=OneWay, Source={StaticResource GetPasswordStringCommand}}"
+                                CommandParameter="{Binding ElementName=spTextInput, Mode=OneWay}">
+                        
+                    </KeyBinding>
+                </PasswordBox.InputBindings>-->
+            </PasswordBox>
         <Label x:Name="tbErrorLogIn"
-               Content=""
-               Grid.Row="3"
+               Grid.Row="2"
                Grid.Column="1"
+               BindingGroup="{Binding BindingGroupName=Parameters}"
+               Content="{Binding LabelContent, Source={StaticResource MainWindowViewModel}}"
                VerticalAlignment="Top"
                HorizontalAlignment="Left"
-               Width="230"
-               Height="20"
-               FontSize="12"
-               Foreground="Red">
+               Width="250"
+               Height="25"
+               FontSize="15"
+               Foreground="Blue"
+               Padding="0,0,0,5"
+               Margin="0">
         </Label>
+
         <StackPanel
             Grid.ColumnSpan="2"
             Grid.Row="4"
             Orientation="Horizontal">
-        <Button Content="Log in"
+            <Button Content="Log in"
+                
                 Style="{StaticResource LogInButton}"
                 Width="80"
                 Margin="165,0,0,12"
-                Command="{Binding LogInCommand, Source={StaticResource MainWindowViewModel}}" 
-                CommandParameter="{Binding ElementName=spTextInput, Mode=OneWay}"/>
-        <Button Content="Registration" 
+                Command="{Binding LogInCommand, Source={StaticResource MainWindowViewModel}, Mode=TwoWay}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyMultiValueConverter}">
+                        <Binding Path="Text" ElementName="tbUserName"></Binding>
+                        <Binding ElementName="tbPassword"></Binding>
+                        <Binding Path="Content" ElementName="tbErrorLogIn"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="Registration" 
                 Margin="20,0,0,12" 
                 Width="128" 
                 Style="{StaticResource LogInButton}"/>

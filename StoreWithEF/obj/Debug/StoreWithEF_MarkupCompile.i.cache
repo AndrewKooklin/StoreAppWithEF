@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\repos\StoreWithEF\StoreWithEF\App.xaml
-2-1573362268
+31502528747
 4-514268411
-18-172239937
+221175644831
 18682115212
-MainWindow.xaml;View\Registration.xaml;
+Components\BindablePasswordBox.xaml;MainWindow.xaml;View\Registration.xaml;
 
 True
 

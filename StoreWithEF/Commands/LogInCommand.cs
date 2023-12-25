@@ -10,29 +10,30 @@ namespace StoreWithEF.Commands
 {
     public class LogInCommand : ICommand
     {
+        public LogInCommand()
+        {
+        }
+
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            if(parameter is StackPanel)
-            {
-                var sp = (StackPanel)parameter;
-                var spChildren = sp.Children;
-                TextBox userName = (TextBox)spChildren[0];
-                PasswordBox password = (PasswordBox)spChildren[1];
-
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            
+
+            if (parameter != null)
+            {
+                var values = (object[])parameter;
+                string userNameValue = values[0].ToString();
+                PasswordBox passwordBox = (PasswordBox)values[1];
+                string passwordValue = passwordBox.Password;
+                Label label = (Label)values[2];
+                string labelContent = label.Content.ToString();
+
+            }
         }
     }
 }
