@@ -43,17 +43,31 @@ namespace StoreWithEF.ViewModel
             }
         }
 
-        private string _labelContent = "";
-        public string LabelContent
+        private string _inputLabelContent = "";
+        public string InputLabelContent
         {
             get
             {
-                return _labelContent;
+                return _inputLabelContent;
             }
             set
             {
-                _labelContent = value;
-                OnPropertyChanged(nameof(LabelContent));
+                _inputLabelContent = value;
+                OnPropertyChanged(nameof(InputLabelContent));
+            }
+        }
+
+        private string _ckeckUserLabelContent = "";
+        public string CheckUserLabelContent
+        {
+            get
+            {
+                return _ckeckUserLabelContent;
+            }
+            set
+            {
+                _ckeckUserLabelContent = value;
+                OnPropertyChanged(nameof(CheckUserLabelContent));
             }
         }
 
@@ -80,12 +94,12 @@ namespace StoreWithEF.ViewModel
                 userName.Length < 3 || passwordValue.Length < 3 ||
                 String.IsNullOrWhiteSpace(passwordValue) || String.IsNullOrEmpty(passwordValue))
             {
-                LabelContent = "Имя и пароль не менее 3 символов";
+                InputLabelContent = "Имя и пароль не менее 3 символов";
                 return false;
             }
             else
             {
-                LabelContent = "";
+                InputLabelContent = "";
                 return true;
             }
         }

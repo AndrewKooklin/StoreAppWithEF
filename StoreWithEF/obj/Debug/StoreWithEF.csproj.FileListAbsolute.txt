@@ -24,4 +24,3 @@ C:\repos\StoreWithEF\StoreWithEF\bin\Debug\EntityFramework.SqlServer.xml
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\Registration.baml
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.CopyComplete
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\repos\StoreWithEF\StoreWithEF\obj\Debug\Components\BindablePasswordBox.baml

@@ -52,7 +52,7 @@ namespace StoreWithEF {
         #line hidden
         
         
-        #line 114 "..\..\MainWindow.xaml"
+        #line 115 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox tbUserName;
         
@@ -60,7 +60,15 @@ namespace StoreWithEF {
         #line hidden
         
         
-        #line 130 "..\..\MainWindow.xaml"
+        #line 131 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lErrorInput;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 145 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.PasswordBox tbPassword;
         
@@ -68,7 +76,7 @@ namespace StoreWithEF {
         #line hidden
         
         
-        #line 139 "..\..\MainWindow.xaml"
+        #line 154 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lErrorLogIn;
         
@@ -112,9 +120,12 @@ namespace StoreWithEF {
             this.tbUserName = ((System.Windows.Controls.TextBox)(target));
             return;
             case 3:
-            this.tbPassword = ((System.Windows.Controls.PasswordBox)(target));
+            this.lErrorInput = ((System.Windows.Controls.Label)(target));
             return;
             case 4:
+            this.tbPassword = ((System.Windows.Controls.PasswordBox)(target));
+            return;
+            case 5:
             this.lErrorLogIn = ((System.Windows.Controls.Label)(target));
             return;
             }
