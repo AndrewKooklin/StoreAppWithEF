@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StoreWithEF"
         xmlns:viewModel="clr-namespace:StoreWithEF.ViewModel"
-        xmlns:help="clr-namespace:StoreWithEF.HelpMethods" 
-        xmlns:components="clr-namespace:StoreWithEF.Components"
+        xmlns:help="clr-namespace:StoreWithEF.HelpMethods"
         xmlns:commands="clr-namespace:StoreWithEF.Commands"
         mc:Ignorable="d"
         Title="LogInForm" 
@@ -22,16 +21,9 @@
     <Window.Resources>
         <viewModel:MainWindowViewModel x:Key="MainWindowViewModel">
         </viewModel:MainWindowViewModel>
-        <help:ValidateTextBoxRule x:Key="ValidateTextBoxRule">
-        </help:ValidateTextBoxRule>
         <help:MyMultiValueConverter x:Key="MyMultiValueConverter">
         </help:MyMultiValueConverter>
-        <commands:GetPasswordStringCommand x:Key="GetPasswordStringCommand">
-        </commands:GetPasswordStringCommand>
-        <components:BindablePasswordBox x:Key="BindablePasswordBox">
-            
-        </components:BindablePasswordBox>
-        
+
 
         <Style x:Key="LogInLabel" TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="20"/>
@@ -64,17 +56,7 @@
                            FontWeight="Bold"
                            Padding="220,0,0,0"
                            HorizontalAlignment="Right">!</TextBlock>
-                
-            </DockPanel>
-        </ControlTemplate>
-        <ControlTemplate x:Key="ValidationPasswordBoxTemplate">
-            <DockPanel>
-                <TextBlock Foreground="Red"
-                           DockPanel.Dock="Bottom">!
-                </TextBlock>
-                <AdornedElementPlaceholder x:Name="ErrorAdorner">
-                    
-                </AdornedElementPlaceholder>
+
             </DockPanel>
         </ControlTemplate>
 
@@ -82,14 +64,14 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Height" Value="37"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Style.Triggers>
+            <!--<Style.Triggers>
                 <Trigger Property="Validation.HasError" Value="true">
                     <Setter Property="ToolTip"
               Value="{Binding RelativeSource={x:Static RelativeSource.Self},
                               Path=(Validation.Errors)[0].ErrorContent}"/>
                     <Setter Property="Foreground" Value="Red"/>
                 </Trigger>
-            </Style.Triggers>
+            </Style.Triggers>-->
         </Style>
         <Style x:Key="PasswordBox" TargetType="{x:Type PasswordBox}">
             <Setter Property="FontSize" Value="20"/>
@@ -145,24 +127,16 @@
                     </Binding>
                 </TextBox.Text>-->
             </TextBox>
-            <PasswordBox x:Name="tbPassword"
+        <PasswordBox x:Name="tbPassword"
                          Grid.Row="3"
                          Grid.Column="1"
-                         Validation.ErrorTemplate="{StaticResource ValidationPasswordBoxTemplate}"
                          FontSize="20"
                          Height="37"
                          HorizontalAlignment="Left"                   
                          Margin="0"
                          Width="230">
-                <!--<PasswordBox.InputBindings>
-                    <KeyBinding Key="Return" 
-                                Command="{Binding Mode=OneWay, Source={StaticResource GetPasswordStringCommand}}"
-                                CommandParameter="{Binding ElementName=spTextInput, Mode=OneWay}">
-                        
-                    </KeyBinding>
-                </PasswordBox.InputBindings>-->
-            </PasswordBox>
-        <Label x:Name="tbErrorLogIn"
+        </PasswordBox>
+        <Label x:Name="lErrorLogIn"
                Grid.Row="2"
                Grid.Column="1"
                BindingGroup="{Binding BindingGroupName=Parameters}"

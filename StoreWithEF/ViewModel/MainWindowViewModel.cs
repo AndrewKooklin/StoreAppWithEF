@@ -60,7 +60,6 @@ namespace StoreWithEF.ViewModel
         public MainWindowViewModel()
         {
             LogInCommand = new RelayCommand(Execute, CanExecute);
-            GetPasswordtring = new GetPasswordStringCommand();
         }
 
         public ICommand LogInCommand { get; set; }
@@ -98,7 +97,5 @@ namespace StoreWithEF.ViewModel
 
 
         public ICommand RegistrationRedirectCommand { get; set; }
-
-        public ICommand GetPasswordtring { get; set; }
     }
 }
