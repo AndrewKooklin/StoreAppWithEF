@@ -13,7 +13,6 @@ C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.GenerateResource.c
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.CoreCompileInputs.cache
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.exe
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.pdb
-C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\Registration.g.cs
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF_Content.g.cs
 C:\repos\StoreWithEF\StoreWithEF\bin\Debug\StoreWithEFDB.mdf
 C:\repos\StoreWithEF\StoreWithEF\bin\Debug\StoreWithEFDB_log.ldf
@@ -21,6 +20,10 @@ C:\repos\StoreWithEF\StoreWithEF\bin\Debug\EntityFramework.dll
 C:\repos\StoreWithEF\StoreWithEF\bin\Debug\EntityFramework.SqlServer.dll
 C:\repos\StoreWithEF\StoreWithEF\bin\Debug\EntityFramework.xml
 C:\repos\StoreWithEF\StoreWithEF\bin\Debug\EntityFramework.SqlServer.xml
-C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\Registration.baml
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\StoreWithEF.csproj.CopyComplete
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ClientsWindow.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ClientsWindow.baml
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\RegistrationWindow.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\RegistrationWindow.baml
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\Registration.baml

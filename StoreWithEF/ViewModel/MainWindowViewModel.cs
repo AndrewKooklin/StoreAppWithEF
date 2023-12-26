@@ -10,6 +10,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.ComponentModel;
 using StoreWithEF.Commands;
+using StoreWithEF.HelpMethods;
+using StoreWithEF.View;
 
 namespace StoreWithEF.ViewModel
 {
@@ -74,9 +76,12 @@ namespace StoreWithEF.ViewModel
         public MainWindowViewModel()
         {
             LogInCommand = new RelayCommand(Execute, CanExecute);
+            RedirectRegistrationCommand = new RedirectRegistrationCommand();
         }
 
         public ICommand LogInCommand { get; set; }
+
+        public ICommand RedirectRegistrationCommand { get; set; }
 
 
         private bool CanExecute(object param)
@@ -95,6 +100,7 @@ namespace StoreWithEF.ViewModel
                 String.IsNullOrWhiteSpace(passwordValue) || String.IsNullOrEmpty(passwordValue))
             {
                 InputLabelContent = "Имя и пароль не менее 3 символов";
+                CheckUserLabelContent = "";
                 return false;
             }
             else
@@ -106,10 +112,29 @@ namespace StoreWithEF.ViewModel
 
         private void Execute(object param)
         {
-            // TODO CheckUserToDataBase(param);
+            if (param == null)
+            {
+                return;
+            }
+            var values = (object[])param;
+            string userNameValue = values[0].ToString();
+            PasswordBox passwordBox = (PasswordBox)values[1];
+            string passwordValue = passwordBox.Password;
+
+            CheckUserToDataBase checkUserToDB = new CheckUserToDataBase();
+
+            if(!checkUserToDB.CheckUser(userNameValue, passwordValue))
+            {
+                CheckUserLabelContent = "Пользователь не найден,\nпроверьте имя и пароль";
+                return;
+            }
+            else
+            {
+                CheckUserLabelContent = "";
+                App.Current.MainWindow.Hide();
+                ClientsWindow clientsWindow = new ClientsWindow();
+                clientsWindow.Show();
+            }
         }
-
-
-        public ICommand RegistrationRedirectCommand { get; set; }
     }
 }
