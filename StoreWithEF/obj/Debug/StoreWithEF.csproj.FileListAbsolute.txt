@@ -26,4 +26,3 @@ C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ClientsWindow.g.cs
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ClientsWindow.baml
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\RegistrationWindow.g.cs
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\RegistrationWindow.baml
-C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\Registration.baml

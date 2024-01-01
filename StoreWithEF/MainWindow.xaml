@@ -16,7 +16,7 @@
         MinWidth="500"
         MaxWidth="500"
         Background="MediumPurple"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Loaded="MainWindow_Loaded">
 
     <Window.Resources>
         <viewModel:MainWindowViewModel x:Key="MainWindowViewModel">
@@ -111,7 +111,6 @@
                Grid.Row="3"
                Style="{StaticResource LogInLabel}" 
                Width="110"/>
-
         <TextBox x:Name="tbUserName"
                  Grid.Row="1"
                  Grid.Column="1"
@@ -135,7 +134,7 @@
                Content="{Binding InputLabelContent, Source={StaticResource MainWindowViewModel}}"
                VerticalAlignment="Top"
                HorizontalAlignment="Left"
-               Width="250"
+               Width="255"
                Height="25"
                FontSize="15"
                Foreground="Blue"
@@ -158,7 +157,7 @@
                Content="{Binding CheckUserLabelContent, Source={StaticResource MainWindowViewModel}}"
                VerticalAlignment="Top"
                HorizontalAlignment="Left"
-               Width="250"
+               Width="265"
                Height="45"
                FontSize="15"
                Foreground="DarkRed"

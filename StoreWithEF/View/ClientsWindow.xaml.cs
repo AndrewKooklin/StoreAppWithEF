@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace StoreWithEF.View
 {
@@ -19,9 +20,19 @@ namespace StoreWithEF.View
     /// </summary>
     public partial class ClientsWindow : Window
     {
+        StoreWithEFDBEntities context;
+
         public ClientsWindow()
         {
             InitializeComponent();
+            context = new StoreWithEFDBEntities(); 
+        }
+
+        private void ClientsWindow_Load(object sender, RoutedEventArgs e)
+        {
+            context.Clients.Load();
+            lvClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
+
         }
     }
 }

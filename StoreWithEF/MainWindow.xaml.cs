@@ -24,5 +24,11 @@ namespace StoreWithEF
         {
             InitializeComponent();
         }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbUserName.Text = StoreWithEF.Properties.Settings.Default.UserName;
+            tbPassword.Password = StoreWithEF.Properties.Settings.Default.Password;
+        }
     }
 }

@@ -86,20 +86,30 @@ namespace StoreWithEF.ViewModel
 
         private bool CanExecute(object param)
         {
-            if(param == null)
+            if (param == null)
             {
                 return false;
             }
+
             var values = (object[])param;
             string userName = values[0].ToString();
             PasswordBox passwordBox = (PasswordBox)values[1];
             string passwordValue = passwordBox.Password;
 
-            if (userName == null || String.IsNullOrEmpty(userName) || String.IsNullOrWhiteSpace(UserName) ||
-                userName.Length < 3 || passwordValue.Length < 3 ||
-                String.IsNullOrWhiteSpace(passwordValue) || String.IsNullOrEmpty(passwordValue))
+            string _userName = StoreWithEF.Properties.Settings.Default.UserName;
+            string _password = StoreWithEF.Properties.Settings.Default.Password;
+
+
+            if (userName.Equals(_userName) && passwordValue.Equals(_password))
             {
-                InputLabelContent = "Имя и пароль не менее 3 символов";
+                
+                return true;
+            }
+            if (String.IsNullOrEmpty(userName) || 
+                userName.Length < 3 || passwordValue.Length < 3 ||
+                 String.IsNullOrEmpty(passwordValue))
+            {
+                InputLabelContent = "Имя и пароль не менее 3 символов !";
                 CheckUserLabelContent = "";
                 return false;
             }
@@ -125,7 +135,7 @@ namespace StoreWithEF.ViewModel
 
             if(!checkUserToDB.CheckUser(userNameValue, passwordValue))
             {
-                CheckUserLabelContent = "Пользователь не найден,\nпроверьте имя и пароль";
+                CheckUserLabelContent = "Пользователь не найден, проверьте\nимя и пароль или зарегистрируйтесь !";
                 return;
             }
             else
