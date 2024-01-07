@@ -82,6 +82,7 @@
     <Compile Include="Clients.cs">
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Commands\AddClientCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />

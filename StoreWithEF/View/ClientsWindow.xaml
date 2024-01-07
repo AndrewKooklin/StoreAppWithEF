@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StoreWithEF.View"
+        xmlns:viewModel="clr-namespace:StoreWithEF.ViewModel"
         mc:Ignorable="d"
         Title="ClientsWindow" 
         Height="450" 
@@ -15,10 +16,16 @@
 
     <Window.Resources>
 
+        <viewModel:ClientsWindowViewModel x:Key="ClientsWindowViewModel">
+            
+        </viewModel:ClientsWindowViewModel>
+
         <Style x:Key="HeaderGridViewColumn" TargetType="GridViewColumnHeader">
             <Setter Property="Background" Value="Cyan"/>
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
         </Style>
 
         <Style x:Key="ClientsButton" TargetType="{x:Type Button}">
@@ -50,10 +57,10 @@
                   Height="400" 
                   Margin="10,10,0,10" 
                   VerticalAlignment="Top" 
-                  Width="615"
-                  >
-            <ListView.View>
-                <GridView>
+                  Width="620"
+                  Padding="0">
+            <ListView.View >
+                <GridView >
                     <GridViewColumn Header="Id" 
                                     DisplayMemberBinding="{Binding ClientId}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
@@ -85,13 +92,14 @@
                     Orientation="Vertical">
             <Button 
                 Content="Добавить"
-                Style="{StaticResource ClientsButton}">
+                Style="{StaticResource ClientsButton}"
+                Command="{Binding AddClientCommand, Source={StaticResource ClientsWindowViewModel}}">
             </Button>
-            <Button Grid.Column="1"
+            <Button
                 Content="Удалить"
                 Style="{StaticResource ClientsButton}">
             </Button>
-            <Button Grid.Column="1"
+            <Button
                 Style="{StaticResource ClientsButton}"
                 Height="45">
                 <Button.Content>
@@ -100,7 +108,7 @@
                     </TextBlock>
                 </Button.Content>
             </Button>
-            <Button Grid.Column="1"
+            <Button
                 Style="{StaticResource ClientsButton}"
                 Height="45">
                 <Button.Content>

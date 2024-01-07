@@ -7,13 +7,13 @@ using System.Windows.Input;
 
 namespace StoreWithEF.Commands
 {
-    public class RegistrationCommand : ICommand
+    public class AddClientCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object parameter)
