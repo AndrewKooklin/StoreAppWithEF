@@ -11,23 +11,123 @@ namespace StoreWithEF
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Clients
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
+    public partial class Clients : INotifyPropertyChanged
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Clients()
         {
             this.Products = new HashSet<Products>();
         }
-    
+
+        public Clients(string lastName, string firstName, 
+            string fathersName, string phoneNumber, string email)
+        {
+            LastName = lastName;
+            FirstName = firstName;
+            FathersName = fathersName;
+            PhoneNumber = phoneNumber;
+            Email = email;
+        }
+
+        private string _lastName = String.Empty;
+        private string _firstName = String.Empty;
+        private string _fathersName = String.Empty;
+        private string _phoneNumber = String.Empty;
+        private string _email = String.Empty;
+
+
         public int ClientId { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string FathersName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
+        public string LastName {
+            get
+            {
+                return _lastName;
+            }
+
+            set
+            {
+                if (value != _lastName)
+                {
+                    _lastName = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        public string FirstName
+        {
+            get
+            {
+                return _firstName;
+            }
+
+            set
+            {
+                if (value != _firstName)
+                {
+                    _firstName = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        public string FathersName {
+            get
+            {
+                return _fathersName;
+            }
+
+            set
+            {
+                if (value != _fathersName)
+                {
+                    _fathersName = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        public string PhoneNumber {
+            get
+            {
+                return _phoneNumber;
+            }
+
+            set
+            {
+                if (value != _phoneNumber)
+                {
+                    _phoneNumber = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+        public string Email {
+            get
+            {
+                return _email;
+            }
+
+            set
+            {
+                if (value != _email)
+                {
+                    _email = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Products> Products { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }

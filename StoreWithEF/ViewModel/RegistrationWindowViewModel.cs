@@ -147,7 +147,7 @@ namespace StoreWithEF.ViewModel
             else
             {
                 Users user = new Users(userNameValue, passwordValue);
-                AddUser addUser = new AddUser();
+                AddNewUser addUser = new AddNewUser();
                 addUser.Add(user);
 
                 if (CkeckRememberMe)

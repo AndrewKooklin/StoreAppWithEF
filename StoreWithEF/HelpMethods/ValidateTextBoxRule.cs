@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
+
 namespace StoreWithEF.HelpMethods
 {
     public class ValidateTextBoxRule : ValidationRule

@@ -32,12 +32,12 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
         <Style x:Key="LabelErrorStyle" TargetType="Label">
-            <Setter Property="FontSize" Value="10"/>
-            <Setter Property="Foreground" Value="Red"/>
-            <Setter Property="Height" Value="15"/>
-            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="250"/>
             <Setter Property="Margin" Value="10,0,0,3"/>
-            <Setter Property="Padding" Value="0,0,0,1"/>
+            <Setter Property="Padding" Value="0,0,0,0"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>

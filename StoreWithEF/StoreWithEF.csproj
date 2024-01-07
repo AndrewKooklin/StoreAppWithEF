@@ -87,8 +87,10 @@
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="HelpMethods\AddUser.cs" />
+    <Compile Include="HelpMethods\AddNewClient.cs" />
+    <Compile Include="HelpMethods\AddNewUser.cs" />
     <Compile Include="HelpMethods\CheckInputText.cs" />
+    <Compile Include="HelpMethods\CheckTextAddClientForm.cs" />
     <Compile Include="HelpMethods\CheckUserToDataBase.cs" />
     <Compile Include="HelpMethods\GetDBContext.cs" />
     <Compile Include="HelpMethods\MyMultiValueConverter.cs" />

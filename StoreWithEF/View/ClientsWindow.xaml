@@ -63,19 +63,19 @@
             <ListView.View >
                 <GridView >
                     <GridViewColumn Header="Id" 
-                                    DisplayMemberBinding="{Binding ClientId}"
+                                    DisplayMemberBinding="{Binding ClientId, UpdateSourceTrigger=PropertyChanged}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="35"/>
                     <GridViewColumn Header="LastName" 
-                                    DisplayMemberBinding="{Binding LastName}"
+                                    DisplayMemberBinding="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="FirstName" 
-                                    DisplayMemberBinding="{Binding FirstName}"
+                                    DisplayMemberBinding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="FathersName" 
-                                    DisplayMemberBinding="{Binding FathersName}"
+                                    DisplayMemberBinding="{Binding FathersName, UpdateSourceTrigger=PropertyChanged}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="PhoneNumber" 

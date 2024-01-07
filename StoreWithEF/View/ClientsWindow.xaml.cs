@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using System.Collections.ObjectModel;
 
 namespace StoreWithEF.View
 {
@@ -30,9 +31,14 @@ namespace StoreWithEF.View
 
         private void ClientsWindow_Load(object sender, RoutedEventArgs e)
         {
-            context.Clients.Load();
-            lvClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
-
+            ObservableCollection<Clients> observableClients = new ObservableCollection<Clients>(); 
+            var clientsList = context.Clients;
+            foreach(var item in clientsList)
+            {
+                observableClients.Add(item);
+            }
+            //lvClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
+            lvClients.ItemsSource = observableClients;
         }
     }
 }
