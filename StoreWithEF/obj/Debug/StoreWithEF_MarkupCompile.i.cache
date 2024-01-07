@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\repos\StoreWithEF\StoreWithEF\App.xaml
-3-679943939
+41162412514
 4-514268411
-281532510960
+31-1355924401
 18682115212
-MainWindow.xaml;View\ClientsWindow.xaml;View\RegistrationWindow.xaml;
+MainWindow.xaml;View\AddClientWindow.xaml;View\ClientsWindow.xaml;View\RegistrationWindow.xaml;
 
 True
 

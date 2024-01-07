@@ -12,7 +12,8 @@
         MinWidth="800"
         MaxWidth="800"
         Background="MediumPurple"
-        WindowStartupLocation="CenterScreen" Loaded="ClientsWindow_Load">
+        WindowStartupLocation="CenterScreen" 
+        Loaded="ClientsWindow_Load">
 
     <Window.Resources>
 
@@ -93,7 +94,7 @@
             <Button 
                 Content="Добавить"
                 Style="{StaticResource ClientsButton}"
-                Command="{Binding AddClientCommand, Source={StaticResource ClientsWindowViewModel}}">
+                Command="{Binding OpenFormAddClientCommand, Source={StaticResource ClientsWindowViewModel}}">
             </Button>
             <Button
                 Content="Удалить"

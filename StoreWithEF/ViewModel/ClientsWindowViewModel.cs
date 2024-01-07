@@ -17,24 +17,9 @@ namespace StoreWithEF.ViewModel
         {
             context.Clients.Load();
 
-            AddClientCommand = new AddClientCommand();
+            OpenFormAddClientCommand = new OpenFormAddClientWindowCommand();
         }
 
-        public ICommand AddClientCommand { get; set; }
-
-        //private Clients _client = new Clients();
-
-        //public Clients Client
-        //{
-        //    get
-        //    {
-        //        return _client;
-        //    }
-        //    set
-        //    {
-        //        _client = value;
-        //        OnPropertyChanged(nameof(Client));
-        //    }
-        //}
+        public ICommand OpenFormAddClientCommand { get; set; }
     }
 }

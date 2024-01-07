@@ -83,6 +83,7 @@
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Commands\AddClientCommand.cs" />
+    <Compile Include="Commands\OpenFormAddClientWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
@@ -103,10 +104,14 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddClientWindowViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClientsWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\RegistrationWindowViewModel.cs" />
+    <Compile Include="View\AddClientWindow.xaml.cs">
+      <DependentUpon>AddClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
@@ -125,6 +130,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ClientsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
