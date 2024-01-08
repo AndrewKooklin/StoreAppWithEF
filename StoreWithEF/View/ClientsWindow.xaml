@@ -54,36 +54,38 @@
 
 
         <ListView x:Name="lvClients"
+                  ItemsSource="{Binding ObservableClients, Source={StaticResource ClientsWindowViewModel}, 
+                                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   HorizontalAlignment="Left" 
                   Height="400" 
                   Margin="10,10,0,10" 
                   VerticalAlignment="Top" 
-                  Width="620"
+                  Width="625"
                   Padding="0">
             <ListView.View >
                 <GridView >
                     <GridViewColumn Header="Id" 
-                                    DisplayMemberBinding="{Binding ClientId, UpdateSourceTrigger=PropertyChanged}"
+                                    DisplayMemberBinding="{Binding ClientId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
-                                    Width="35"/>
+                                    Width="40"/>
                     <GridViewColumn Header="LastName" 
-                                    DisplayMemberBinding="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"
+                                    DisplayMemberBinding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="FirstName" 
-                                    DisplayMemberBinding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"
+                                    DisplayMemberBinding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="FathersName" 
-                                    DisplayMemberBinding="{Binding FathersName, UpdateSourceTrigger=PropertyChanged}"
+                                    DisplayMemberBinding="{Binding FathersName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="PhoneNumber" 
-                                    DisplayMemberBinding="{Binding PhoneNumber}"
+                                    DisplayMemberBinding="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                     <GridViewColumn Header="Email" 
-                                    DisplayMemberBinding="{Binding Email}"
+                                    DisplayMemberBinding="{Binding Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                     HeaderContainerStyle="{StaticResource HeaderGridViewColumn}"
                                     Width="115"/>
                 </GridView>
@@ -98,7 +100,9 @@
             </Button>
             <Button
                 Content="Удалить"
-                Style="{StaticResource ClientsButton}">
+                Style="{StaticResource ClientsButton}"
+                Command="{Binding DeleteClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvClients, Mode=OneWay}">
             </Button>
             <Button
                 Style="{StaticResource ClientsButton}"

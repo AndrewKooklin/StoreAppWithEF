@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
 using System.Collections.ObjectModel;
+using StoreWithEF.ViewModel;
 
 namespace StoreWithEF.View
 {
@@ -26,19 +27,20 @@ namespace StoreWithEF.View
         public ClientsWindow()
         {
             InitializeComponent();
-            context = new StoreWithEFDBEntities(); 
+            //context = new StoreWithEFDBEntities();
+            DataContext = new ClientsWindowViewModel();
         }
 
         private void ClientsWindow_Load(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<Clients> observableClients = new ObservableCollection<Clients>(); 
-            var clientsList = context.Clients;
-            foreach(var item in clientsList)
-            {
-                observableClients.Add(item);
-            }
+            //ObservableCollection<Clients> observableClients = new ObservableCollection<Clients>(); 
+            //var clientsList = context.Clients;
+            //foreach(var item in clientsList)
+            //{
+            //    observableClients.Add(item);
+            //}
             //lvClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
-            lvClients.ItemsSource = observableClients;
+            //lvClients.ItemsSource = observableClients;
         }
     }
 }

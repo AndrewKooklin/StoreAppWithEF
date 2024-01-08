@@ -23,5 +23,10 @@ namespace StoreWithEF.View
         {
             InitializeComponent();
         }
+
+        private void Closed_Window(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

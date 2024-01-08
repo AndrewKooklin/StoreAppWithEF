@@ -10,9 +10,12 @@ namespace StoreWithEF.ViewModel
 {
     public class AddClientWindowViewModel : BaseViewModel
     {
+        ClientsWindowViewModel clientsWindowViewModel = new ClientsWindowViewModel();
+
+
         public AddClientWindowViewModel()
         {
-            AddClientCommand = new AddClientCommand();
+            AddClientCommand = new AddClientCommand(clientsWindowViewModel);
         }
 
         public ICommand AddClientCommand { get; set; }

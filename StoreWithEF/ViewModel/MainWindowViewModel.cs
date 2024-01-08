@@ -17,6 +17,8 @@ namespace StoreWithEF.ViewModel
 {
     public class MainWindowViewModel : BaseViewModel
     {
+        ClientsWindow clientsWindow;
+
         private string userName;
         public string UserName
         {
@@ -141,9 +143,9 @@ namespace StoreWithEF.ViewModel
             else
             {
                 CheckUserLabelContent = "";
-                App.Current.MainWindow.Hide();
-                ClientsWindow clientsWindow = new ClientsWindow();
-                clientsWindow.Show();
+                Application.Current.MainWindow.Hide();
+                App.clientsWindow = new ClientsWindow();
+                App.clientsWindow.Show();
             }
         }
     }

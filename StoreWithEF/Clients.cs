@@ -51,7 +51,7 @@ namespace StoreWithEF
                 if (value != _lastName)
                 {
                     _lastName = value;
-                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(LastName));
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace StoreWithEF
                 if (value != _firstName)
                 {
                     _firstName = value;
-                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(FirstName));
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace StoreWithEF
                 if (value != _fathersName)
                 {
                     _fathersName = value;
-                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(FathersName));
                 }
             }
         }
@@ -97,7 +97,7 @@ namespace StoreWithEF
                 if (value != _phoneNumber)
                 {
                     _phoneNumber = value;
-                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(PhoneNumber));
                 }
             }
         }
@@ -112,7 +112,7 @@ namespace StoreWithEF
                 if (value != _email)
                 {
                     _email = value;
-                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(Email));
                 }
             }
         }
@@ -126,7 +126,7 @@ namespace StoreWithEF
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

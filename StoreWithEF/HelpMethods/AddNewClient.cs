@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace StoreWithEF.HelpMethods
 {
-    class AddNewClient
+    public class AddNewClient
     {
         GetDBContext getDBContext = new GetDBContext();
 
-        public void Add(Clients client)
+        public void AddClient(Clients client)
         {
             var db = getDBContext.GetDB();
             db.Clients.Add(client);

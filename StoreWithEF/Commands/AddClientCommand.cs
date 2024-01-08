@@ -1,7 +1,11 @@
 ﻿using StoreWithEF.HelpMethods;
+using StoreWithEF.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -18,6 +22,15 @@ namespace StoreWithEF.Commands
         string fathersNameValue = "";
         string phoneNumberValue = "";
         string emailValue = "";
+
+        private ObservableCollection<Clients> _observableClients;
+        StoreWithEFDBEntities _context;
+
+        public AddClientCommand(ObservableCollection<Clients> observableClients, StoreWithEFDBEntities context)
+        {
+            _observableClients = observableClients;
+            _context = context;
+        }
 
         public bool CanExecute(object parameter)
         {
@@ -100,8 +113,14 @@ namespace StoreWithEF.Commands
             {
                 Clients client = new Clients(lastNameValue, firstNameValue, fathersNameValue,
                     phoneNumberValue, emailValue);
-                AddNewClient addNewClient = new AddNewClient();
-                addNewClient.Add(client);
+                //AddNewClient addNewClient = new AddNewClient();
+                //addNewClient.AddClient(client);
+                //_clientsWindowViewModel.AddClient(client);
+                _observableClients.Add(client);
+                _context.Clients.Add(client);
+                _context.SaveChanges();
+                App.clientsWindow.lvClients.ItemsSource = null;
+                App.clientsWindow.lvClients.ItemsSource = _observableClients;
             }
         }
     }

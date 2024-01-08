@@ -37,9 +37,14 @@ namespace StoreWithEF.HelpMethods
         }
         public bool CheckEmail(string text)
         {
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
             try
             {
                 MailAddress m = new MailAddress(text);
+                
                 return true;
             }
             catch (FormatException)

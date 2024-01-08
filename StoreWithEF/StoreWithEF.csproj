@@ -83,15 +83,17 @@
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Commands\AddClientCommand.cs" />
+    <Compile Include="Commands\CloseWindowCommand.cs" />
+    <Compile Include="Commands\DeleteClientCommand.cs" />
     <Compile Include="Commands\OpenFormAddClientWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="HelpMethods\AddNewClient.cs" />
     <Compile Include="HelpMethods\AddNewUser.cs" />
     <Compile Include="HelpMethods\CheckInputText.cs" />
     <Compile Include="HelpMethods\CheckTextAddClientForm.cs" />
     <Compile Include="HelpMethods\CheckUserToDataBase.cs" />
+    <Compile Include="HelpMethods\DeleteClient.cs" />
     <Compile Include="HelpMethods\GetDBContext.cs" />
     <Compile Include="HelpMethods\MyMultiValueConverter.cs" />
     <Compile Include="HelpMethods\ValidateTextBoxRule.cs" />
@@ -106,7 +108,6 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AddClientWindowViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClientsWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />

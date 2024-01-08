@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoreWithEF.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace StoreWithEF
     /// </summary>
     public partial class App : Application
     {
+        public static ClientsWindow clientsWindow;
     }
 }
