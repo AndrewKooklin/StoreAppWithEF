@@ -91,9 +91,11 @@
                VerticalAlignment="Top" 
                Height="30"
                Width="200"/>
-        <Label x:Name="lLastName"
+        <Label x:Name="lClientId"
+               Content=""
+               Visibility="Collapsed"/>
+        <Label Content="Фамилия"
                Grid.Row="1"
-               Content="Фамилия"
                Style="{StaticResource LabelStyle}"/>
         <Label Content="Имя"
                Grid.Row="3"
@@ -164,13 +166,21 @@
             <Button x:Name="btnAddClient"
                 Content="Добавить"
                     Style="{StaticResource AddClientButton}"
-                    Margin="120,0,0,0"
+                    Margin="50,0,0,0"
                     Command="{Binding AddClientCommand, Source={StaticResource ClientsWindowViewModel}}"
                     CommandParameter="{Binding ElementName=gAddClient, Mode=OneWay}"/>
+            <Button x:Name="btnChangeClient"
+                Content="Изменить" 
+                Style="{StaticResource AddClientButton}"
+                Margin="10,0,0,0"
+                Command="{Binding ChangeClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=gAddClient, Mode=OneWay}"/>
             <Button x:Name="btnClearForm"
                 Content="Очистить" 
                 Style="{StaticResource AddClientButton}"
-                Margin="10,0,0,0"/>
+                Margin="10,0,0,0"
+                Command="{Binding ClearClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=gAddClient, Mode=OneWay}"/>
             <Button x:Name="btnCancel"
                 Content="Отменить" 
                 Style="{StaticResource AddClientButton}"

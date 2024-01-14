@@ -43,7 +43,7 @@
 
     </Window.Resources>
 
-    <Grid>
+    <Grid x:Name="gClients">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -96,12 +96,19 @@
             <Button 
                 Content="Добавить"
                 Style="{StaticResource ClientsButton}"
-                Command="{Binding OpenFormAddClientCommand, Source={StaticResource ClientsWindowViewModel}}">
+                Command="{Binding OpenFormAddClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvClients, Mode=OneWay}">
             </Button>
             <Button
                 Content="Удалить"
                 Style="{StaticResource ClientsButton}"
                 Command="{Binding DeleteClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvClients, Mode=OneWay}">
+            </Button>
+            <Button
+                Content="Изменить"
+                Style="{StaticResource ClientsButton}"
+                Command="{Binding OpenFormChangeClientWindowCommand, Source={StaticResource ClientsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=lvClients, Mode=OneWay}">
             </Button>
             <Button
@@ -115,7 +122,8 @@
             </Button>
             <Button
                 Style="{StaticResource ClientsButton}"
-                Height="45">
+                Height="45"
+                Command="{Binding OpenProductsWindowCommand, Source={StaticResource ClientsWindowViewModel}}">
                 <Button.Content>
                     <TextBlock Text="Все покупки" 
                            TextWrapping="Wrap">

@@ -22,9 +22,13 @@ namespace StoreWithEF.ViewModel
             context.Clients.Load();
             OpenFormAddClientCommand = new OpenFormAddClientWindowCommand();
             AddClientCommand = new AddClientCommand(ObservableClients, context);
+            OpenFormChangeClientWindowCommand = new OpenFormChangeClientWindowCommand();
+            ChangeClientCommand = new ChangeClientCommand(ObservableClients, context);
             DeleteClientCommand = new DeleteClientCommand(ObservableClients, context);
+            ClearClientCommand = new ClearClientCommand();
             CloseWindowCommand = new CloseWindowCommand();
-            
+            OpenProductsWindowCommand = new OpenProductsWindowCommand();
+
             foreach (var item in context.Clients)
             {
                 _observableClients.Add(item);
@@ -37,7 +41,15 @@ namespace StoreWithEF.ViewModel
 
         public ICommand DeleteClientCommand { get; set; }
 
+        public ICommand OpenFormChangeClientWindowCommand { get; set; }
+
+        public ICommand ChangeClientCommand { get; set; }
+
+        public ICommand ClearClientCommand { get; set; }
+
         public ICommand CloseWindowCommand { get; set; }
+
+        public ICommand OpenProductsWindowCommand { get; set; }
 
         private ObservableCollection<Clients> _observableClients;
 

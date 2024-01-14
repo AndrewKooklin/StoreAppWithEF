@@ -83,9 +83,13 @@
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Commands\AddClientCommand.cs" />
+    <Compile Include="Commands\ChangeClientCommand.cs" />
+    <Compile Include="Commands\ClearClientCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\DeleteClientCommand.cs" />
     <Compile Include="Commands\OpenFormAddClientWindowCommand.cs" />
+    <Compile Include="Commands\OpenFormChangeClientWindowCommand.cs" />
+    <Compile Include="Commands\OpenProductsWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
@@ -111,12 +115,16 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClientsWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\ProductsWindowViewModel.cs" />
     <Compile Include="ViewModel\RegistrationWindowViewModel.cs" />
     <Compile Include="View\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductsWindow.xaml.cs">
+      <DependentUpon>ProductsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -138,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClientsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

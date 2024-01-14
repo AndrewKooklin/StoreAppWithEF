@@ -38,17 +38,17 @@ namespace StoreWithEF.Commands
             {
                 Grid gridClient = (Grid)parameter;
                 var gridChildren = gridClient.Children;
-                TextBox lastName = (TextBox)gridChildren[6];
-                TextBox firstName = (TextBox)gridChildren[8];
-                TextBox fathersName = (TextBox)gridChildren[10];
-                TextBox phoneNumber = (TextBox)gridChildren[12];
-                TextBox email = (TextBox)gridChildren[14];
+                TextBox lastName = (TextBox)gridChildren[7];
+                TextBox firstName = (TextBox)gridChildren[9];
+                TextBox fathersName = (TextBox)gridChildren[11];
+                TextBox phoneNumber = (TextBox)gridChildren[13];
+                TextBox email = (TextBox)gridChildren[15];
 
-                Label lastNameError = (Label)gridChildren[7];
-                Label firstNameError = (Label)gridChildren[9];
-                Label fathersNameError = (Label)gridChildren[11];
-                Label phoneNumberError = (Label)gridChildren[13];
-                Label emailError = (Label)gridChildren[15];
+                Label lastNameError = (Label)gridChildren[8];
+                Label firstNameError = (Label)gridChildren[10];
+                Label fathersNameError = (Label)gridChildren[12];
+                Label phoneNumberError = (Label)gridChildren[14];
+                Label emailError = (Label)gridChildren[16];
 
                 lastNameValue = lastName.Text.ToString();
                 firstNameValue = firstName.Text.ToString();
@@ -94,6 +94,15 @@ namespace StoreWithEF.Commands
                 {
                     phoneNumberError.Content = "";
                 }
+                if(_context.Clients.Any(c => c.PhoneNumber == phoneNumberValue))
+                {
+                    phoneNumberError.Content = "Такой номер уже есть в базе";
+                    return false;
+                }
+                else
+                {
+                    phoneNumberError.Content = "";
+                }
                 if (!checkInputText.CheckEmail(emailValue))
                 {
                     emailError.Content = "Email в формате name@site.ru";
@@ -113,9 +122,6 @@ namespace StoreWithEF.Commands
             {
                 Clients client = new Clients(lastNameValue, firstNameValue, fathersNameValue,
                     phoneNumberValue, emailValue);
-                //AddNewClient addNewClient = new AddNewClient();
-                //addNewClient.AddClient(client);
-                //_clientsWindowViewModel.AddClient(client);
                 _observableClients.Add(client);
                 _context.Clients.Add(client);
                 _context.SaveChanges();
