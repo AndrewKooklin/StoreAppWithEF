@@ -1,10 +1,12 @@
-﻿using System;
+﻿using StoreWithEF.Commands;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace StoreWithEF.ViewModel
 {
@@ -21,6 +23,8 @@ namespace StoreWithEF.ViewModel
             {
                 _observableProducts.Add(item);
             }
+
+            OpenFormAddProductWindowCommand = new OpenFormAddProductWindowCommand();
         }
 
         private ObservableCollection<Products> _observableProducts;
@@ -37,5 +41,9 @@ namespace StoreWithEF.ViewModel
                 OnPropertyChanged(nameof(ObservableProducts));
             }
         }
+
+        public ICommand OpenFormAddProductWindowCommand { get; set; }
+
+        public ICommand AddProductCommand { get; set; }
     }
 }

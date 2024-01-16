@@ -91,7 +91,7 @@
             <Button 
                 Content="Добавить"
                 Style="{StaticResource ProductsButton}"
-                Command="{Binding}"
+                Command="{Binding OpenFormAddProductWindowCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding }">
             </Button>
             <Button

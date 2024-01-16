@@ -83,11 +83,13 @@
       <DependentUpon>ModelWithEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Commands\AddClientCommand.cs" />
+    <Compile Include="Commands\AddProductCommand.cs" />
     <Compile Include="Commands\ChangeClientCommand.cs" />
     <Compile Include="Commands\ClearClientCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\DeleteClientCommand.cs" />
     <Compile Include="Commands\OpenFormAddClientWindowCommand.cs" />
+    <Compile Include="Commands\OpenFormAddProductWindowCommand.cs" />
     <Compile Include="Commands\OpenFormChangeClientWindowCommand.cs" />
     <Compile Include="Commands\OpenProductsWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
@@ -120,6 +122,9 @@
     <Compile Include="View\AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AddProductWindow.xaml.cs">
+      <DependentUpon>AddProductWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
@@ -142,6 +147,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AddClientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

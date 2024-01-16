@@ -30,3 +30,5 @@ C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\AddClientWindow.g.cs
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\AddClientWindow.baml
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ProductsWindow.g.cs
 C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\ProductsWindow.baml
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\AddProductWindow.g.cs
+C:\repos\StoreWithEF\StoreWithEF\obj\Debug\View\AddProductWindow.baml
