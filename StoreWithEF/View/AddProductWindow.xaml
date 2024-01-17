@@ -20,7 +20,6 @@
     <Window.Resources>
 
         <viewModel:ProductsWindowViewModel x:Key="ProductsWindowViewModel">
-
         </viewModel:ProductsWindowViewModel>
 
         <Style x:Key="LabelStyle" TargetType="Label">

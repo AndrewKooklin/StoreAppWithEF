@@ -33,19 +33,7 @@ namespace StoreWithEF.Commands
                 return;
             }
 
-            //int indexView = listView.SelectedIndex;
-            //if (indexView == -1 || indexView > (listView.Items.Count - 1))
-            //{
-            //    MessageBox.Show("Выберите клиента из списка", "Выбор клиента",
-            //        MessageBoxButton.OK, MessageBoxImage.Warning);
-            //    return;
-            //}
-
             AddClientWindow addClientWindow = new AddClientWindow();
-
-            
-
-            
             addClientWindow.Show();
         }
     }

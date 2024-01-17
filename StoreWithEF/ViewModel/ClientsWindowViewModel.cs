@@ -29,6 +29,7 @@ namespace StoreWithEF.ViewModel
             ClearClientCommand = new ClearClientCommand();
             CloseWindowCommand = new CloseWindowCommand();
             OpenProductsWindowCommand = new OpenProductsWindowCommand();
+            OpenProductsClientWindowCommand = new OpenProductsClientWindowCommand();
 
             foreach (var item in context.Clients)
             {
@@ -51,6 +52,8 @@ namespace StoreWithEF.ViewModel
         public ICommand CloseWindowCommand { get; set; }
 
         public ICommand OpenProductsWindowCommand { get; set; }
+
+        public ICommand OpenProductsClientWindowCommand { get; set; }
 
         private ObservableCollection<Clients> _observableClients;
 

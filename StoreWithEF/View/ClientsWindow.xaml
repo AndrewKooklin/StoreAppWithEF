@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="ClientsWindow" 
         Height="450" 
-        Width="800"
-        MinWidth="800"
-        MaxWidth="800"
+        Width="650"
+        MinWidth="650"
+        MaxWidth="650"
         Background="MediumPurple"
         WindowStartupLocation="CenterScreen" 
         Loaded="ClientsWindow_Load">
@@ -18,7 +18,6 @@
     <Window.Resources>
 
         <viewModel:ClientsWindowViewModel x:Key="ClientsWindowViewModel">
-            
         </viewModel:ClientsWindowViewModel>
 
         <Style x:Key="HeaderGridViewColumn" TargetType="GridViewColumnHeader">
@@ -33,13 +32,12 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="34"/>
             <Setter Property="Width" Value="85"/>
-            <Setter Property="Margin" Value="10 15 0 0"/>
+            <Setter Property="Margin" Value="10 13 0 0"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Background" Value="LightGreen"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-
 
     </Window.Resources>
 
@@ -51,7 +49,6 @@
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
 
         <ListView x:Name="lvClients"
                   ItemsSource="{Binding ObservableClients, Source={StaticResource ClientsWindowViewModel}, 
@@ -113,9 +110,10 @@
             </Button>
             <Button
                 Style="{StaticResource ClientsButton}"
-                Height="45">
+                Height="45"
+                Command="{Binding OpenProductsWindowCommand, Source={StaticResource ClientsWindowViewModel}}">
                 <Button.Content>
-                    <TextBlock Text="Покупки клиента" 
+                    <TextBlock Text="Все покупки" 
                            TextWrapping="Wrap">
                     </TextBlock>
                 </Button.Content>
@@ -123,9 +121,10 @@
             <Button
                 Style="{StaticResource ClientsButton}"
                 Height="45"
-                Command="{Binding OpenProductsWindowCommand, Source={StaticResource ClientsWindowViewModel}}">
+                Command="{Binding OpenProductsClientWindowCommand, Source={StaticResource ClientsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvClients, Mode=OneWay}">
                 <Button.Content>
-                    <TextBlock Text="Все покупки" 
+                    <TextBlock Text="Покупки клиента" 
                            TextWrapping="Wrap">
                     </TextBlock>
                 </Button.Content>

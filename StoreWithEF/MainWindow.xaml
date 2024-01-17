@@ -24,7 +24,6 @@
         <help:MyMultiValueConverter x:Key="MyMultiValueConverter">
         </help:MyMultiValueConverter>
 
-
         <Style x:Key="LogInLabel" TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Center"/>

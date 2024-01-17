@@ -45,7 +45,6 @@ namespace StoreWithEF.Commands
                 clientIdValue = Convert.ToInt32(tbClientId.Text.ToString());
                 productCodeValue = Convert.ToInt32(tbProductCode.Text.ToString());
                 productNameValue = tbProductName.Text.ToString();
-                //emailValue = tbEmail.Text.ToString();
 
                 CheckTextAddClientForm checkInputText = new CheckTextAddClientForm();
 

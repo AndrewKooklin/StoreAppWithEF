@@ -95,12 +95,12 @@
     <Compile Include="Commands\OpenFormAddProductWindowCommand.cs" />
     <Compile Include="Commands\OpenFormChangeClientWindowCommand.cs" />
     <Compile Include="Commands\OpenFormChangeProductWindowCommand.cs" />
+    <Compile Include="Commands\OpenProductsClientWindowCommand.cs" />
     <Compile Include="Commands\OpenProductsWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="HelpMethods\AddNewUser.cs" />
-    <Compile Include="HelpMethods\CheckInputText.cs" />
     <Compile Include="HelpMethods\CheckTextAddClientForm.cs" />
     <Compile Include="HelpMethods\CheckUserToDataBase.cs" />
     <Compile Include="HelpMethods\DeleteClient.cs" />
@@ -132,6 +132,9 @@
     <Compile Include="View\ClientsWindow.xaml.cs">
       <DependentUpon>ClientsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductsClientWindow.xaml.cs">
+      <DependentUpon>ProductsClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductsWindow.xaml.cs">
       <DependentUpon>ProductsWindow.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClientsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductsClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

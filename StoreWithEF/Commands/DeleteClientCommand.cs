@@ -16,15 +16,13 @@ namespace StoreWithEF.Commands
         ObservableCollection<Clients> _observableClients;
         ListView listView;
         StoreWithEFDBEntities _context;
+        public event EventHandler CanExecuteChanged;
 
         public DeleteClientCommand(ObservableCollection<Clients> observableClients, StoreWithEFDBEntities context)
         {
             _observableClients = observableClients;
             _context = context;
         }
-
-        public event EventHandler CanExecuteChanged;
-
 
         public bool CanExecute(object parameter)
         {

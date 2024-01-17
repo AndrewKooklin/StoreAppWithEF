@@ -16,5 +16,6 @@ namespace StoreWithEF
     {
         public static ClientsWindow clientsWindow = new ClientsWindow();
         public static ProductsWindow productsWindow = new ProductsWindow();
+        public static ProductsClientWindow productsClientWindow = new ProductsClientWindow();
     }
 }

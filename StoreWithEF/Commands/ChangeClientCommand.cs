@@ -25,7 +25,8 @@ namespace StoreWithEF.Commands
         private ObservableCollection<Clients> _observableClients;
         StoreWithEFDBEntities _context;
 
-        public ChangeClientCommand(ObservableCollection<Clients> observableClients, StoreWithEFDBEntities context)
+        public ChangeClientCommand(ObservableCollection<Clients> observableClients, 
+                                    StoreWithEFDBEntities context)
         {
             _observableClients = observableClients;
             _context = context;
@@ -96,15 +97,6 @@ namespace StoreWithEF.Commands
                 {
                     phoneNumberError.Content = "";
                 }
-                //if (_context.Clients.Any(c => c.PhoneNumber == phoneNumberValue))
-                //{
-                //    phoneNumberError.Content = "Такой номер уже есть в базе";
-                //    return false;
-                //}
-                //else
-                //{
-                //    phoneNumberError.Content = "";
-                //}
                 if (!checkInputText.CheckEmail(emailValue))
                 {
                     emailError.Content = "Email в формате name@site.ru";

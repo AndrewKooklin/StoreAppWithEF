@@ -22,7 +22,6 @@
     <Window.Resources>
 
         <viewModel:ClientsWindowViewModel x:Key="ClientsWindowViewModel">
-
         </viewModel:ClientsWindowViewModel>
 
         <Style x:Key="LabelStyle" TargetType="Label">

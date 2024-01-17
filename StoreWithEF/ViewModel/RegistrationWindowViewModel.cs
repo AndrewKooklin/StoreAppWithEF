@@ -63,16 +63,6 @@ namespace StoreWithEF.ViewModel
             }
         }
 
-        //private void Checked(object sender, RoutedEventArgs e)
-        //{
-        //    _ckeckRememberMe = true;
-        //}
-
-        //private void UnChecked(object sender, RoutedEventArgs e)
-        //{
-        //    _ckeckRememberMe = false;
-        //}
-
         public ICommand RedirectToLogInCommand { get; set; }
 
         public ICommand RegisterCommand { get; set; }
@@ -96,7 +86,6 @@ namespace StoreWithEF.ViewModel
             PasswordBox confirmPassword = (PasswordBox)values[2];
             string confirmPasswordValue = confirmPassword.Password;
             
-
             if (userName == null || String.IsNullOrEmpty(userName) || String.IsNullOrWhiteSpace(userName) ||
                 userName.Length < 3 || passwordValue.Length < 3 ||
                 String.IsNullOrWhiteSpace(passwordValue) || String.IsNullOrEmpty(passwordValue))
@@ -135,7 +124,6 @@ namespace StoreWithEF.ViewModel
 
             if (checkUserToDB.CheckUser(userNameValue, passwordValue))
             {
-                //CkeckMatchPasswordsLabelContent = "Пользователь уже существует !";
                 MessageBox.Show("Пользователь уже существует", "Registration", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }

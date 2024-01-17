@@ -12,7 +12,6 @@ namespace StoreWithEF.HelpMethods
 {
     public class ValidateTextBoxRule : ValidationRule
     {
-
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if (!Regex.IsMatch(value.ToString(), "^[0-9a-zA-Z]{3,}"))

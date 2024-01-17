@@ -7,17 +7,18 @@
         xmlns:viewModel="clr-namespace:StoreWithEF.ViewModel"
         mc:Ignorable="d"
         Title="ProductsWindow" 
-        Height="450" 
-        Width="600"
-        MinWidth="600"
-        MaxWidth="600"
+        Height="450"
+        MinHeight="450"
+        MaxHeight="450"
+        Width="610"
+        MinWidth="610"
+        MaxWidth="610"
         Background="MediumPurple"
         WindowStartupLocation="CenterScreen">
     
     <Window.Resources>
 
         <viewModel:ProductsWindowViewModel x:Key="ProductsWindowViewModel">
-
         </viewModel:ProductsWindowViewModel>
 
         <Style x:Key="HeaderGridViewColumn" TargetType="GridViewColumnHeader">
@@ -32,13 +33,12 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="34"/>
             <Setter Property="Width" Value="85"/>
-            <Setter Property="Margin" Value="10 15 0 0"/>
+            <Setter Property="Margin" Value="5 15 10 0"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Background" Value="LightGreen"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Padding" Value="0"/>
         </Style>
-
 
     </Window.Resources>
 
@@ -47,20 +47,19 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4.7*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
 
         <ListView x:Name="lvProducts"
                   ItemsSource="{Binding ObservableProducts, Source={StaticResource ProductsWindowViewModel}, 
                                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                  HorizontalAlignment="Left" 
+                  HorizontalAlignment="Center" 
                   Height="400" 
-                  Margin="10,10,0,10" 
+                  Margin="10" 
                   VerticalAlignment="Top" 
-                  Width="490"
-                  Padding="0">
+                  Width="530"
+                  Padding="28,5,5,0">
             <ListView.View >
                 <GridView >
                     <GridViewColumn Header="ProductId" 

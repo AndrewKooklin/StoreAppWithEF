@@ -84,7 +84,6 @@ namespace StoreWithEF.ViewModel
 
         public ICommand RedirectRegistrationCommand { get; set; }
 
-
         private bool CanExecute(object param)
         {
             if (param == null)

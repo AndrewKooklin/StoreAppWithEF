@@ -20,7 +20,6 @@ namespace StoreWithEF.Commands
         int productIdValue;
         int productCodeValue;
         string productNameValue = "";
-        string emailValue = "";
 
         public ChangeProductCommand(ObservableCollection<Products> observableProducts, StoreWithEFDBEntities context)
         {
@@ -53,15 +52,10 @@ namespace StoreWithEF.Commands
 
                 CheckTextAddClientForm checkInputText = new CheckTextAddClientForm();
 
-                //bool checkLProductId = checkInputText.CheckParseToInt32(lProductId.Content.ToString());
-
-
                 productIdValue = Convert.ToInt32(lProductId.Content.ToString());
                 clientIdValue = Convert.ToInt32(tbClientId.Text.ToString());
                 productCodeValue = Convert.ToInt32(tbProductCode.Text.ToString());
                 productNameValue = tbProductName.Text.ToString();
-
-                
 
                 if (!checkInputText.CheckProductCode(productCodeValue))
                 {
