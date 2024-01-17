@@ -28,6 +28,9 @@ namespace StoreWithEF.ViewModel
             AddProductCommand = new AddProductCommand(_observableProducts, _context);
             DeleteProductCommand = new DeleteProductCommand(_observableProducts, _context);
             OpenFormChangeProductWindowCommand = new OpenFormChangeProductWindowCommand();
+            ChangeProductCommand = new ChangeProductCommand(_observableProducts, _context);
+            ClearProductCommand = new ClearProductCommand();
+            CloseWindowCommand = new CloseWindowCommand();
         }
 
         private ObservableCollection<Products> _observableProducts;
@@ -50,6 +53,12 @@ namespace StoreWithEF.ViewModel
         public ICommand AddProductCommand { get; set; }
 
         public ICommand DeleteProductCommand { get; set; }
+
+        public ICommand ChangeProductCommand { get; set; }
+
+        public ICommand ClearProductCommand { get; set; }
+
+        public ICommand CloseWindowCommand { get; set; }
 
         public ICommand OpenFormChangeProductWindowCommand { get; set; }
     }

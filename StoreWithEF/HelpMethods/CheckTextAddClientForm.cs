@@ -88,5 +88,19 @@ namespace StoreWithEF.HelpMethods
                 return false;
             }
         }
+
+        public bool CheckParseToInt32(string text)
+        {
+            bool check = Int32.TryParse(text, out int value);
+
+            if (check)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

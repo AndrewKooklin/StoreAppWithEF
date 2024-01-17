@@ -19,6 +19,7 @@ namespace StoreWithEF.Commands
 
         public void Execute(object parameter)
         {
+            App.productsWindow = new ProductsWindow();
             App.productsWindow.Show();
         }
     }

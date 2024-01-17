@@ -1,4 +1,4 @@
-﻿<Window x:Class="StoreWithEF.View.AddProductWindow"
+﻿<Window x:Name="window" x:Class="StoreWithEF.View.AddProductWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -151,13 +151,13 @@
                 Content="Изменить" 
                 Style="{StaticResource AddProductButton}"
                 Margin="10,0,0,0"
-                Command="{Binding ChangeClientCommand, Source={StaticResource ProductsWindowViewModel}}"
+                Command="{Binding ChangeProductCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=gAddProduct, Mode=OneWay}"/>
             <Button x:Name="btnClearForm"
                 Content="Очистить" 
                 Style="{StaticResource AddProductButton}"
                 Margin="10,0,0,0"
-                Command="{Binding ClearClientCommand, Source={StaticResource ProductsWindowViewModel}}"
+                Command="{Binding ClearProductCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=gAddProduct, Mode=OneWay}"/>
             <Button x:Name="btnCancel"
                 Content="Отменить" 

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -16,6 +17,7 @@ namespace StoreWithEF.Commands
         StoreWithEFDBEntities _context;
         public event EventHandler CanExecuteChanged;
         int clientIdValue;
+        int productIdValue;
         int productCodeValue;
         string productNameValue = "";
         string emailValue = "";
@@ -30,45 +32,37 @@ namespace StoreWithEF.Commands
         {
             if (parameter is Grid)
             {
-                Grid gridClient = (Grid)parameter;
-                var gridChildren = gridClient.Children;
-                Label lProductId = (Label)gridChildren[2];
+                Grid gridProduct = (Grid)parameter;
+                var gridChildren = gridProduct.Children;
+                Label lProductId = (Label)gridChildren[1];
+
+                if(String.IsNullOrEmpty(lProductId.Content.ToString()) || 
+                    String.IsNullOrWhiteSpace(lProductId.Content.ToString()))
+                {
+                    MessageBox.Show("Закройте окно и выберите \nпродукт снова", "Выбор продукта",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return false;
+                }
                 TextBox tbClientId = (TextBox)gridChildren[6];
+                tbClientId.IsReadOnly= true;
                 TextBox tbProductCode = (TextBox)gridChildren[8];
                 TextBox tbProductName = (TextBox)gridChildren[10];
-                TextBox tbEmail = (TextBox)gridChildren[12];
  
-                Label clientIdError = (Label)gridChildren[7];
                 Label productCodeError = (Label)gridChildren[9];
                 Label productNameError = (Label)gridChildren[11];
 
+                CheckTextAddClientForm checkInputText = new CheckTextAddClientForm();
+
+                //bool checkLProductId = checkInputText.CheckParseToInt32(lProductId.Content.ToString());
+
+
+                productIdValue = Convert.ToInt32(lProductId.Content.ToString());
                 clientIdValue = Convert.ToInt32(tbClientId.Text.ToString());
                 productCodeValue = Convert.ToInt32(tbProductCode.Text.ToString());
                 productNameValue = tbProductName.Text.ToString();
-                //emailValue = tbEmail.Text.ToString();
 
-                CheckTextAddClientForm checkInputText = new CheckTextAddClientForm();
+                
 
-                if (!checkInputText.CheckClientId(clientIdValue))
-                {
-                    clientIdError.Content = "Минимум 1 цифра";
-                    return false;
-                }
-                else
-                {
-                    clientIdError.Content = "";
-                }
-                if (_context.Clients.Any(c => c.ClientId == clientIdValue))
-                {
-                    Clients client = _context.Clients.First(c => c.ClientId == clientIdValue);
-                    emailValue = client.Email;
-                    clientIdError.Content = "";
-                }
-                else
-                {
-                    clientIdError.Content = "Клиента с таким Id нет в базе";
-                    return false;
-                }
                 if (!checkInputText.CheckProductCode(productCodeValue))
                 {
                     productCodeError.Content = "Минимум 1 цифра";
@@ -91,10 +85,12 @@ namespace StoreWithEF.Commands
         {
             if (parameter != null)
             {
-
-                //Products product = _observableProducts.;
-                //_observableProducts.Add(product);
-                //_context.Products.Add(product);
+                Products observableProduct = _observableProducts.First(p => p.ProductId == productIdValue);
+                observableProduct.ProductCode = productCodeValue;
+                observableProduct.ProductName = productNameValue;
+                Products contextProduct = _context.Products.First(p => p.ProductId == productIdValue);
+                contextProduct.ProductCode = productCodeValue;
+                contextProduct.ProductName = productNameValue;
                 _context.SaveChanges();
                 App.productsWindow.lvProducts.ItemsSource = null;
                 App.productsWindow.lvProducts.ItemsSource = _observableProducts;

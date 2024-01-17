@@ -87,6 +87,7 @@
     <Compile Include="Commands\ChangeClientCommand.cs" />
     <Compile Include="Commands\ChangeProductCommand.cs" />
     <Compile Include="Commands\ClearClientCommand.cs" />
+    <Compile Include="Commands\ClearProductCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\DeleteClientCommand.cs" />
     <Compile Include="Commands\DeleteProductCommand.cs" />

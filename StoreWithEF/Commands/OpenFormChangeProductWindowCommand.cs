@@ -47,6 +47,7 @@ namespace StoreWithEF.Commands
                 {
                     addProductWindow.lProductId.Content = product.ProductId.ToString();
                     addProductWindow.tbClientId.Text = product.ClientId.ToString();
+                    addProductWindow.tbClientId.IsReadOnly = true;
                     addProductWindow.tbProductCode.Text = product.ProductCode.ToString();
                     addProductWindow.tbProductName.Text = product.ProductName.ToString();
                     addProductWindow.Show();

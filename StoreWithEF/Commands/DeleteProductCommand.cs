@@ -42,20 +42,20 @@ namespace StoreWithEF.Commands
             int indexView = listView.SelectedIndex;
             if (indexView == -1 || indexView > (listView.Items.Count - 1))
             {
-                MessageBox.Show("Выберите клиента из списка", "Выбор клиента",
+                MessageBox.Show("Выберите продукт из списка", "Выбор продукта",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             Products product = (Products)listView.SelectedItem;
-            _context.Products.Remove(product);
-            //foreach (var item in _context.Products)
-            //{
-            //    if (item.Equals(product))
-            //    {
-            //        _context.Products.Remove(product);
-            //    }
-            //}
+            Products contextProduct = _context.Products.First(p => p.ProductId == product.ProductId);
+            foreach(var item in _context.Products)
+            {
+                if (item.ProductId.Equals(contextProduct.ProductId))
+                {
+                    _context.Products.Remove(item);
+                }
+            }
             _context.SaveChanges();
             _observableProducts.Remove(product);
             App.productsWindow.lvProducts.ItemsSource = null;
