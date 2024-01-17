@@ -85,12 +85,15 @@
     <Compile Include="Commands\AddClientCommand.cs" />
     <Compile Include="Commands\AddProductCommand.cs" />
     <Compile Include="Commands\ChangeClientCommand.cs" />
+    <Compile Include="Commands\ChangeProductCommand.cs" />
     <Compile Include="Commands\ClearClientCommand.cs" />
     <Compile Include="Commands\CloseWindowCommand.cs" />
     <Compile Include="Commands\DeleteClientCommand.cs" />
+    <Compile Include="Commands\DeleteProductCommand.cs" />
     <Compile Include="Commands\OpenFormAddClientWindowCommand.cs" />
     <Compile Include="Commands\OpenFormAddProductWindowCommand.cs" />
     <Compile Include="Commands\OpenFormChangeClientWindowCommand.cs" />
+    <Compile Include="Commands\OpenFormChangeProductWindowCommand.cs" />
     <Compile Include="Commands\OpenProductsWindowCommand.cs" />
     <Compile Include="Commands\RedirectRegistrationCommand.cs" />
     <Compile Include="Commands\RedirectToLogInCommand.cs" />

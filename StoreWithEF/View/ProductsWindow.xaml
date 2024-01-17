@@ -97,14 +97,14 @@
             <Button
                 Content="Удалить"
                 Style="{StaticResource ProductsButton}"
-                Command="{Binding }"
-                CommandParameter="{Binding }">
+                Command="{Binding DeleteProductCommand, Source={StaticResource ProductsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvProducts, Mode=OneWay}">
             </Button>
             <Button
                 Content="Изменить"
                 Style="{StaticResource ProductsButton}"
-                Command="{Binding }"
-                CommandParameter="{Binding }">
+                Command="{Binding OpenFormChangeProductWindowCommand, Source={StaticResource ProductsWindowViewModel}}"
+                CommandParameter="{Binding ElementName=lvProducts, Mode=OneWay}">
             </Button>
             
         </StackPanel>

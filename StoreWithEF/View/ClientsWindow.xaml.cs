@@ -22,25 +22,16 @@ namespace StoreWithEF.View
     /// </summary>
     public partial class ClientsWindow : Window
     {
-        StoreWithEFDBEntities context;
+        StoreWithEFDBEntities _context;
 
         public ClientsWindow()
         {
             InitializeComponent();
-            //context = new StoreWithEFDBEntities();
             DataContext = new ClientsWindowViewModel();
         }
 
         private void ClientsWindow_Load(object sender, RoutedEventArgs e)
         {
-            //ObservableCollection<Clients> observableClients = new ObservableCollection<Clients>(); 
-            //var clientsList = context.Clients;
-            //foreach(var item in clientsList)
-            //{
-            //    observableClients.Add(item);
-            //}
-            //lvClients.ItemsSource = context.Clients.Local.ToBindingList<Clients>();
-            //lvClients.ItemsSource = observableClients;
         }
     }
 }

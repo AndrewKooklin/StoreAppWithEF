@@ -14,7 +14,6 @@ namespace StoreWithEF.Commands
     public class DeleteClientCommand : ICommand
     {
         ObservableCollection<Clients> _observableClients;
-        Clients client = new Clients();
         ListView listView;
         StoreWithEFDBEntities _context;
 
@@ -26,7 +25,6 @@ namespace StoreWithEF.Commands
 
         public event EventHandler CanExecuteChanged;
 
-        
 
         public bool CanExecute(object parameter)
         {

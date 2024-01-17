@@ -19,6 +19,7 @@ namespace StoreWithEF.ViewModel
         public ClientsWindowViewModel()
         {
             _observableClients = new ObservableCollection<Clients>();
+            
             context.Clients.Load();
             OpenFormAddClientCommand = new OpenFormAddClientWindowCommand();
             AddClientCommand = new AddClientCommand(ObservableClients, context);

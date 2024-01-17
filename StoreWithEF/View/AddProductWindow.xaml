@@ -7,9 +7,9 @@
         xmlns:viewModel="clr-namespace:StoreWithEF.ViewModel"
         mc:Ignorable="d"
         Title="AddProductWindow" 
-        Height="370"
-        MinHeight="370"
-        MaxHeight="370"
+        Height="310"
+        MinHeight="310"
+        MaxHeight="310"
         Width="450"
         MinWidth="450"
         MaxWidth="450"
@@ -19,9 +19,9 @@
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
 
-        <viewModel:ClientsWindowViewModel x:Key="ClientsWindowViewModel">
+        <viewModel:ProductsWindowViewModel x:Key="ProductsWindowViewModel">
 
-        </viewModel:ClientsWindowViewModel>
+        </viewModel:ProductsWindowViewModel>
 
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="15"/>
@@ -46,7 +46,7 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Margin" Value="10,0,0,0"/>
-            <Setter Property="Padding" Value="0,3,0,0"/>
+            <Setter Property="Padding" Value="0,5,0,0"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
@@ -54,7 +54,7 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="Height" Value="34"/>
             <Setter Property="Width" Value="85"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Background" Value="LightGreen"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Padding" Value="0"/>
@@ -63,14 +63,12 @@
 
     <Grid x:Name="gAddProduct">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.7*"/>
-            <RowDefinition Height="0.45*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.45*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.45*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.45*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
@@ -101,7 +99,8 @@
                Style="{StaticResource LabelStyle}"/>
         <Label Content="E-Mail"
                Grid.Row="7"
-               Style="{StaticResource LabelStyle}"/>
+               Style="{StaticResource LabelStyle}"
+               Visibility="Collapsed"/>
         <TextBox x:Name="tbClientId"
                  Grid.Row="1"
                  Grid.Column="1"
@@ -134,12 +133,8 @@
         <TextBox x:Name="tbEMail"
                  Grid.Row="7"
                  Grid.Column="1"
-                 Style="{StaticResource TextBoxStyle}"/>
-        <Label x:Name="lErrorEMail"
-               Grid.Row="8"
-               Grid.Column="1"
-               Content=""
-               Style="{StaticResource LabelErrorStyle}"></Label>
+                 Style="{StaticResource TextBoxStyle}"
+                 Visibility="Collapsed"/>
 
         <StackPanel 
             Grid.Row="9"
@@ -150,25 +145,25 @@
                 Content="Добавить"
                     Style="{StaticResource AddProductButton}"
                     Margin="50,0,0,0"
-                    Command="{Binding AddClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                    Command="{Binding AddProductCommand, Source={StaticResource ProductsWindowViewModel}}"
                     CommandParameter="{Binding ElementName=gAddProduct, Mode=OneWay}"/>
             <Button x:Name="btnChangeClient"
                 Content="Изменить" 
                 Style="{StaticResource AddProductButton}"
                 Margin="10,0,0,0"
-                Command="{Binding ChangeClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                Command="{Binding ChangeClientCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=gAddProduct, Mode=OneWay}"/>
             <Button x:Name="btnClearForm"
                 Content="Очистить" 
                 Style="{StaticResource AddProductButton}"
                 Margin="10,0,0,0"
-                Command="{Binding ClearClientCommand, Source={StaticResource ClientsWindowViewModel}}"
+                Command="{Binding ClearClientCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=gAddProduct, Mode=OneWay}"/>
             <Button x:Name="btnCancel"
                 Content="Отменить" 
                 Style="{StaticResource AddProductButton}"
                 Margin="10,0,0,0"
-                Command="{Binding CloseWindowCommand, Source={StaticResource ClientsWindowViewModel}}"
+                Command="{Binding CloseWindowCommand, Source={StaticResource ProductsWindowViewModel}}"
                 CommandParameter="{Binding ElementName=window, Mode=OneWay}"/>
         </StackPanel>
 

@@ -12,19 +12,22 @@ namespace StoreWithEF.ViewModel
 {
     public class ProductsWindowViewModel : BaseViewModel
     {
-        StoreWithEFDBEntities context = new StoreWithEFDBEntities();
+        StoreWithEFDBEntities _context = new StoreWithEFDBEntities();
 
         public ProductsWindowViewModel()
         {
             _observableProducts = new ObservableCollection<Products>();
-            context.Products.Load();
+            _context.Products.Load();
 
-            foreach (var item in context.Products)
+            foreach (var item in _context.Products)
             {
                 _observableProducts.Add(item);
             }
 
             OpenFormAddProductWindowCommand = new OpenFormAddProductWindowCommand();
+            AddProductCommand = new AddProductCommand(_observableProducts, _context);
+            DeleteProductCommand = new DeleteProductCommand(_observableProducts, _context);
+            OpenFormChangeProductWindowCommand = new OpenFormChangeProductWindowCommand();
         }
 
         private ObservableCollection<Products> _observableProducts;
@@ -45,5 +48,9 @@ namespace StoreWithEF.ViewModel
         public ICommand OpenFormAddProductWindowCommand { get; set; }
 
         public ICommand AddProductCommand { get; set; }
+
+        public ICommand DeleteProductCommand { get; set; }
+
+        public ICommand OpenFormChangeProductWindowCommand { get; set; }
     }
 }

@@ -51,7 +51,42 @@ namespace StoreWithEF.HelpMethods
             {
                 return false;
             }
+        }
 
+        public bool CheckClientId(int id)
+        {
+            if (Regex.IsMatch(id.ToString(), "^[0-9]{1,}"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckProductCode(int id)
+        {
+            if (Regex.IsMatch(id.ToString(), "^[0-9]{1,}"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckProductName(string productName)
+        {
+            if (Regex.IsMatch(productName, "^[a-zA-Z]{3,}"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

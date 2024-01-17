@@ -14,6 +14,7 @@ namespace StoreWithEF
     /// </summary>
     public partial class App : Application
     {
-        public static ClientsWindow clientsWindow;
+        public static ClientsWindow clientsWindow = new ClientsWindow();
+        public static ProductsWindow productsWindow = new ProductsWindow();
     }
 }
